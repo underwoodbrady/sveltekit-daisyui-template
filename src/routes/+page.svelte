@@ -1,122 +1,131 @@
 <script lang="ts">
-	import One from 'virtual:icons/material-symbols/imagesmode-rounded';
 	import Night from 'virtual:icons/material-symbols/bedtime';
 	import Day from 'virtual:icons/material-symbols/sunny-rounded';
+	import Alert from 'virtual:icons/material-symbols/notifications-rounded';
+	import Search from 'virtual:icons/material-symbols/manage-search-rounded';
 </script>
 
-<div class="navbar bg-base-300 rounded-box">
-	<div class="flex-1 px-2 lg:flex-none">
-		<a class="text-lg font-bold">daisyUI</a>
-	</div>
-	<div class="flex justify-end flex-1 px-2">
-		<div class="flex items-stretch">
-			<a class="btn btn-ghost rounded-btn">Button</a>
-			<div class="dropdown dropdown-end">
-				<div tabindex="0" role="button" class="btn btn-ghost rounded-btn">Dropdown</div>
-				<ul
-					tabindex="0"
-					class="menu dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+<header class="navbar bg-base-100">
+	<div class="navbar-start">
+		<div class="dropdown">
+			<div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					class="h-5 w-5"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke="currentColor"
+					><path
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M4 6h16M4 12h16M4 18h7"
+					/></svg
 				>
-					<li><a>Item 1</a></li>
-					<li><a>Item 2</a></li>
-				</ul>
 			</div>
-			<button class="btn" onclick="my_modal_3.showModal()">open modal</button>
+			<!-- svelte-ignore a11y-missing-attribute -->
+			<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+			<ul
+				tabindex="0"
+				class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+			>
+				<li><a>Homepage</a></li>
+				<li><a>Portfolio</a></li>
+				<li><a>About</a></li>
+			</ul>
 		</div>
 	</div>
-</div>
-
-<header>
-	<h2 class="font-semibold text-xl">Welcome to SvelteKit</h2>
-	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-	<label class="flex cursor-pointer gap-2">
-		<Night />
-		<input type="checkbox" value="light" class="toggle theme-controller" />
-		<Day />
-	</label>
+	<div class="navbar-center">
+		<a href="/" class="btn btn-ghost text-xl">daisyUI</a>
+	</div>
+	<div class="navbar-end">
+		<button class="btn btn-ghost btn-circle">
+			<Search class="text-lg"/>
+		</button>
+		<button class="btn btn-ghost btn-circle">
+			<div class="indicator">
+				<Alert class="text-lg"/>
+				<span class="badge badge-xs badge-primary indicator-item"></span>
+			</div>
+		</button>
+		<label class="flex cursor-pointer gap-2 ml-4">
+			<Night />
+			<input type="checkbox" value="light" class="toggle theme-controller" />
+			<Day />
+		</label>
+	</div>
 </header>
 
-<section>
-	<div class="card bg-base-300 shadow-xl">
-		<div class="card-body">
-			<h2 class="card-title">Buttons</h2>
-			<button class="btn btn-primary">Button</button>
-			<button class="btn btn-neutral">Neutral</button>
-			<button class="btn btn-link">Link</button>
-			<button class="btn btn-square">
-				<span class="loading loading-spinner"></span>
-			</button>
-			<button class="btn">
-				Button
-				<One class="text-lg text-primary" />
-			</button>
+<main class="hero min-h-screen bg-base-200">
+	<div class="hero-content text-center">
+		<div class="max-w-md">
+			<h1 class="text-5xl font-bold">Hello there</h1>
+			<p class="py-6">
+				Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+				quasi. In deleniti eaque aut repudiandae et a id nisi.
+			</p>
+			<button class="btn btn-primary">Get Started</button>
 		</div>
 	</div>
-	<div class="card bg-base-300 shadow-xl">
-		<div class="card-body">
-			<h2 class="card-title">Dropdowns</h2>
-			<div class="dropdown">
-				<div tabindex="0" role="button" class="btn m-1">Click</div>
-				<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
-				<ul
-					tabindex="0"
-					class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-				>
-					<!-- svelte-ignore a11y-missing-attribute -->
-					<li><a>Item 1</a></li>
-					<!-- svelte-ignore a11y-missing-attribute -->
-					<li><a>Item 2</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="card bg-base-300 shadow-xl">
-		<div class="card-body">
-			<h2 class="card-title">Badges</h2>
-			<div class="badge">default</div>
-			<div class="badge badge-neutral">neutral</div>
-			<div class="badge badge-primary">primary</div>
-		</div>
-	</div>
-    <div>
-        <div class="stats shadow">
-  
-            <div class="stat">
-              <div class="stat-figure text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-              </div>
-              <div class="stat-title">Total Likes</div>
-              <div class="stat-value text-primary">25.6K</div>
-              <div class="stat-desc">21% more than last month</div>
-            </div>
-            
-            <div class="stat">
-              <div class="stat-figure text-secondary">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-8 h-8 stroke-current"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-              </div>
-              <div class="stat-title">Page Views</div>
-              <div class="stat-value text-secondary">2.6M</div>
-              <div class="stat-desc">21% more than last month</div>
-            </div>
-            
-            <div class="stat">
-              <div class="stat-figure text-secondary">
-                <div class="avatar online">
-                  <div class="w-16 rounded-full">
-                    <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                  </div>
-                </div>
-              </div>
-              <div class="stat-value">86%</div>
-              <div class="stat-title">Tasks done</div>
-              <div class="stat-desc text-secondary">31 tasks remaining</div>
-            </div>
-            
-          </div>
-    </div>
-</section>
+</main>
 
-
+<footer class="footer p-10 bg-base-300 text-base-content">
+	<nav>
+		<header class="footer-title">Services</header>
+		<a href="/" class="link link-hover">Branding</a>
+		<a href="/" class="link link-hover">Design</a>
+		<a href="/" class="link link-hover">Marketing</a>
+		<a href="/" class="link link-hover">Advertisement</a>
+	</nav>
+	<nav>
+		<header class="footer-title">Company</header>
+		<a href="/" class="link link-hover">About us</a>
+		<a href="/" class="link link-hover">Contact</a>
+		<a href="/" class="link link-hover">Jobs</a>
+		<a href="/" class="link link-hover">Press kit</a>
+	</nav>
+	<nav>
+		<header class="footer-title">Social</header>
+		<div class="grid grid-flow-col gap-4">
+			<a href="/"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					class="fill-current"
+					><path
+						d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+					></path></svg
+				></a
+			>
+			<a href="/"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					class="fill-current"
+					><path
+						d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+					></path></svg
+				></a
+			>
+			<a href="/"
+				><svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					class="fill-current"
+					><path
+						d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+					></path></svg
+				></a
+			>
+		</div>
+	</nav>
+</footer>
 
 <dialog id="my_modal_3" class="modal">
 	<div class="modal-box">
